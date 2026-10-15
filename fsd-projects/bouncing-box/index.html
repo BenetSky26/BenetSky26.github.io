@@ -70,6 +70,8 @@
 
         // TODO 2 - Variable declarations
        var positionX = 0;
+       var points = 0;
+       var speed = 10;
       
 
 
@@ -84,7 +86,7 @@
         // moveBoxTo(200);
         // moveBoxTo(121);
         moveBoxTo(positionX);
-      positionX += 10;
+      positionX += speed;
           
         }
 
@@ -96,7 +98,16 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
+      positionX = 0;
+      points++;
+      
+      changeBoxText(points);
+      speed += 3;
+      if (positionX > boardWidth){
+       speed *= -1;
 
+      }
+      
  
 
 
